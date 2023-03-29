@@ -45,8 +45,9 @@ export class InstructorHelpGettingStartedComponent {
   jumpTo(target: string): boolean {
     const destination: Element | null = document.getElementById(target);
     if (destination) {
+      destination.scrollIntoView();
       // to prevent the navbar from covering the text
-      destination.scrollIntoView({behavior:"smooth", block: "end", inline: "nearest"});
+      window.scrollTo(0, window.scrollY - 50);
     }
     return false;
   }
